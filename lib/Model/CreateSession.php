@@ -44,6 +44,7 @@ class CreateSession implements ArrayAccess
         'recurring' => 'bool',
         'accept_url' => 'string',
         'cancel_url' => 'string',
+        'button_text' => 'string',
     ];
 
     /**
@@ -61,6 +62,7 @@ class CreateSession implements ArrayAccess
         'recurring' => null,
         'accept_url' => null,
         'cancel_url' => null,
+        'button_text' => null,
     ];
 
     /**
@@ -79,6 +81,7 @@ class CreateSession implements ArrayAccess
         'recurring' => 'recurring',
         'accept_url' => 'accept_url',
         'cancel_url' => 'cancel_url',
+        'button_text' => 'button_text',
     ];
 
     /**
@@ -96,6 +99,7 @@ class CreateSession implements ArrayAccess
         'recurring' => 'setRecurring',
         'accept_url' => 'setAcceptUrl',
         'cancel_url' => 'setCancelUrl',
+        'button_text' => 'setButtonText',
     ];
 
     /**
@@ -113,6 +117,7 @@ class CreateSession implements ArrayAccess
         'recurring' => 'getRecurring',
         'accept_url' => 'getAcceptUrl',
         'cancel_url' => 'getCancelUrl',
+        'button_text' => 'getButtonText',
     ];
 
     /**
@@ -133,6 +138,7 @@ class CreateSession implements ArrayAccess
         $this->container['recurring'] = isset($data['recurring']) ? $data['recurring'] : null;
         $this->container['accept_url'] = isset($data['accept_url']) ? $data['accept_url'] : null;
         $this->container['cancel_url'] = isset($data['cancel_url']) ? $data['cancel_url'] : null;
+        $this->container['button_text'] = isset($data['button_text']) ? $data['button_text'] : null;
     }
 
     public static function swaggerTypes()
@@ -395,6 +401,30 @@ class CreateSession implements ArrayAccess
     public function setCancelUrl($cancelUrl)
     {
         $this->container['cancel_url'] = $cancelUrl;
+
+        return $this;
+    }
+
+    /**
+     * Get buttonText
+     *
+     * @return string
+     */
+    public function getButtonText()
+    {
+        return $this->container['button_text'];
+    }
+
+    /**
+     * Set buttonText
+     *
+     * @param string $buttonText
+     *
+     * @return $this
+     */
+    public function setButtonText($buttonText)
+    {
+        $this->container['button_text'] = $buttonText;
 
         return $this;
     }
